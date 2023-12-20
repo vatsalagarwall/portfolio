@@ -14,7 +14,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://portfolio-puce-one-58.vercel.app", {
+      .post("https://portfolio-puce-one-58.vercel.app/", {
         name,
         email,
         message,

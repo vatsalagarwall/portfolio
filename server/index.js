@@ -10,7 +10,7 @@ const User = require("./Models/userSchema")
 const app = express()
 app.use(express.json());
 app.use(cors({
-    origin: ["https://portfolio-client-tau.vercel.app"],
+    origin: ["https://portfolio-client-tau.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true
 }));
