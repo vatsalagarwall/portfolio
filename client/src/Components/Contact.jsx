@@ -10,10 +10,15 @@ function Contact() {
   const [email, setEmail] = useState();
   const [message, setMessage] = useState();
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5001/", { name, email, message })
+      .post("https://portfolio-puce-one-58.vercel.app/", {
+        name,
+        email,
+        message,
+      })
       .then((result) => {
         console.log(result);
         // alert("hello");
