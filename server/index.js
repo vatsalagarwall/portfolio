@@ -29,18 +29,18 @@ app.get("/", (req, res) => {
 })
 
 
-// app.post('/', (req, res) => {
-//     User.create(req.body)
-//         .then(user => res.json(user))
-//         .catch(err => res.json(err))
-// }
-// )
-app.post('https://portfolio-puce-one-58.vercel.app/', (req, res) => {
+app.post('/', (req, res) => {
     User.create(req.body)
         .then(user => res.json(user))
         .catch(err => res.json(err))
 }
 )
+// app.post('https://portfolio-puce-one-58.vercel.app/', (req, res) => {
+//     User.create(req.body)
+//         .then(user => res.json(user))
+//         .catch(err => res.json(err))
+// }
+// )
 
 
 app.listen(PORT, () => {
