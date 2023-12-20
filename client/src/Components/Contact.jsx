@@ -6,15 +6,14 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [message, setMessage] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://portfolio-puce-one-58.vercel.app/", {
+      .post("http://localhost:8080", {
         name,
         email,
         message,
@@ -22,6 +21,10 @@ function Contact() {
       .then((result) => {
         console.log(result);
         // alert("hello");
+        setName("");
+        setEmail("");
+        setMessage("");
+
         toast.success("Data sent successfully", {
           position: "top-right",
           autoClose: 1000,

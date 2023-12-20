@@ -9,11 +9,15 @@ const User = require("./Models/userSchema")
 
 const app = express()
 app.use(express.json());
-app.use(cors({
-    origin: ["https://portfolio-client-tau.vercel.app/"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+
+app.use(
+    cors({
+        origin: ["http://localhost:3000"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,
+    })
+);
+
 mongoose
     .connect(MONGO_URL, {
         useNewUrlParser: true,
@@ -35,12 +39,6 @@ app.post('/', (req, res) => {
         .catch(err => res.json(err))
 }
 )
-// app.post('https://portfolio-puce-one-58.vercel.app/', (req, res) => {
-//     User.create(req.body)
-//         .then(user => res.json(user))
-//         .catch(err => res.json(err))
-// }
-// )
 
 
 app.listen(PORT, () => {
